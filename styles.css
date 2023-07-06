@@ -1,0 +1,13 @@
+
+.menu-header {
+    font-family: myFont;
+    src:url(Miama.ttf);
+};
+
+body {
+    background-color: #FFFFF0;
+};
+
+p {
+    font-family: 'Crimson Text', serif;
+};
