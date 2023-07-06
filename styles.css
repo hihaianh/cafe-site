@@ -1,13 +1,54 @@
+* {
+    box-sizing: border-box;
+}
 
-.menu-header {
-    font-family: myFont;
-    src:url(Miama.ttf);
-};
+nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
 
 body {
+    margin: 0;
+    padding: 0;
     background-color: #FFFFF0;
 };
 
 p {
     font-family: 'Crimson Text', serif;
 };
+
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: brown;
+    color: white;
+    text-align: center;
+    font-family: 'Crimson', serif;
+    font-size: 15px;
+}
