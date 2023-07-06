@@ -25,6 +25,17 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
+.carousel .carousel-item img {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+}
+.carousel .carousel-item .wrapper {
+    height: 500px;
+    width: 100%;
+}
+
 body {
     margin: 0;
     padding: 0;
