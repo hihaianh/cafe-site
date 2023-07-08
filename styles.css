@@ -94,10 +94,10 @@ body {
     font-family: 'Crimson Text', serif;
 };
 
-/* p {
+p {
     font-family: 'Crimson Text', serif;
-    font-size: 16px;
-}; */
+    font-size: 24px;
+};
 
 .definition h2{
     font-family: 'Cardo', serif;
@@ -107,8 +107,11 @@ body {
 
 .image-grid {
     display: flex;
+    width: 100%;
     justify-content: space-between;
     margin-top: 120px;
+    margin-bottom: 100px;
+    padding-inline: 40px;
 }
 
 .image-grid img {
@@ -118,6 +121,56 @@ body {
 
 .image-grid .middle-image {
     margin-top: 80px;
+    margin-bottom: -80px;
+}
+
+h3 {
+    text-align: center;
+}
+
+.text-center {
+    text-align: center;
+    padding-inline: 60px;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.image-w-text {
+    display: flex;
+    align-items: center;
+}
+.image-w-text img {
+    margin-right: 10px;
+    width: 25%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.container-small {
+    width: 100%;
+    max-width: 670px;
+    margin: 0 auto;
+}
+
+form {
+    padding: 20px;
+}
+
+form input, form textarea {
+    margin-bottom: 10px;
+    padding: 15px;
+    width: 60%;
+    box-sizing: border-box;
+}
+
+form button {
+    padding: 10px 20px;
 }
 
 .footer {
