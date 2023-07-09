@@ -158,6 +158,15 @@ h3 {
     margin: 0 auto;
 }
 
+.contact-extract {
+    padding: 20px;
+    width: 50%;
+}
+
+.contact-extract p {
+    font-size: 18px;
+}
+
 form {
     padding: 20px;
 }
@@ -171,6 +180,19 @@ form input, form textarea {
 
 form button {
     padding: 10px 20px;
+}
+
+.form-image-contained {
+    display: flex;
+}
+
+.form-image-contained img {
+    width: 40%;
+}
+
+.form-container {
+    flex: 1;
+    padding: 20px;
 }
 
 .footer {
