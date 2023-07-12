@@ -85,3 +85,5 @@
       <li><a href="#"><i class="fa-light fa-magnifying-glass"></i></a></li>
     </ul>
   </nav>`
+
+    footer.innerHTML = ``
