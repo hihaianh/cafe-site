@@ -196,13 +196,46 @@ form button {
 }
 
 .footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
+    padding: 20px;
     background-color: brown;
-    color: white;
-    text-align: center;
-    font-family: 'Crimson', serif;
-    font-size: 15px;
+}
+
+.columns {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.column {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.column ul {
+    list-style: none;
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.email-subscription {
+    text-align: right;
+    margin-right: 40px;
+}
+
+.email-subscription h5 {
+    margin-bottom: 10px;
+}
+
+.email-subscription input[type="email"] {
+    padding: 10px;
+    width: 250px;
+    margin-right: 10px;
+}
+
+.email-subscription button {
+    padding: 10px 20px;
 }
