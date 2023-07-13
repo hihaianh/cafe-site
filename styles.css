@@ -341,3 +341,7 @@ form button {
 footer p {
     margin-left: 20px;
 }
+
+.column ul li a:hover {
+    color:#868484;
+}
