@@ -20,7 +20,6 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -28,7 +27,7 @@
     <header class="header">
       <nav>
         <div style="width: 100px">
-          <img src="logo.png" style="width: 100%; height: auto" />
+          <a href="index.html"><img src="logo.png" style="width: 100%; height: auto" /></a>
         </div>
         <ul>
           <div class="dropdown">
@@ -43,7 +42,16 @@
           <li><a href="#">Shop</a></li>
           <li><a href="about.html">About Us</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="#"><i class="fa-light fa-magnifying-glass"></i></a></li>
+          <li>
+            <a href="#">
+              <i class="fa-light fa-magnifying-glass"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-sharp fa-light fa-cart-shopping" style="color: #000000;"></i>
+            </a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -97,20 +105,59 @@
     </div>
 
     <div class="definition">
-      <h3>
+      <p>
         càphê = a Vietnamese coffee made with dark roast beans and sweetened condensed milk
-      </h3>
+      </p>
     </div>
 
-    <h5>Our beans are carefully selected from our Vietnamese crops and roasted to perfection, ensuring that every cup is bursting with flavor. Whether you prefer a classic drip coffee or a sweet càphê, we have the perfect blend for you. So why settle for ordinary coffee when you can enjoy a truly exceptional cup?</h5>
-    
+    <div class="ethos-container">
+      <img src="./images/dak-lak.jpg" alt="dak lak coffee farm">
+      <div class="ethos-right">
+      <h3>our ethos</h3>
+      <h5>At <i>càphê</i>, sustainability lies at the heart of our ethos. We carefully source our beans and tea leaves from small family-run farms in Vietnam, ensuring quality and supporting local communities. With our commitment to ethically-sourced ingredients and eco-friendly practices, we serve you our exquisite artisanal coffee & tea while nurturing the planet. Join us in embracing a sustainable future, one cup at a time.</h5>
+      <p><a href="">Read more in About Us</a></p>
+    </div>
+  </div>
+
+  <div class="sale-container">
+    <h5>Whether you prefer a sweet càphê or a strong herbal tea, we have the perfect blend for you. So why settle for ordinary coffee/tea when you can enjoy a truly exceptional cup with us?</h5>
+    <p><a href="#">Shop here</a></p>
+    <img src="./images/herbal-tea-set.jpg">
+  </div>
+  
+  <div class="browse-container">
+    <p>Browse now-</p>
+    <div class="browse-carousel">
+
+    </div>
+  </div>
     <!-- <footer></footer> -->
   <footer>
+    <div id="footer-container">
     <div class="columns">
       <div class="column">
+        <img src="./images/logo-brown.png" alt="logo">
+        <div class="sns-icons">
+          <ul>
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-instagram fa-xl" style="color: #000000;"></i>
+              </a>
+              <li>
+                <a href="#">
+                  <i class="fa-brands fa-square-facebook fa-xl" style="color: #000000;"></i>
+                </a>
+              </li>
+              
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- <div class="column">
         <p>99 Hackney Road, Shoreditch, London, E1 8TB</p>
         <p>14 Brick Lane, London, E2 9DF</p>
-      </div>
+      </div> -->
 
       <div class="column">
         <ul>
@@ -123,27 +170,28 @@
 
       <div class="column">
         <ul>
-          <li>Search</li>
-          <li>Deliveries & Refunds</li>
-          <li>FAQ</li>
-          <li>Terms Of Service</li>
+          <li><a href="#">Search</a></li>
+          <li><a href="#">Deliveries & Refunds</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Terms Of Service</a></li>
         </ul>
       </div>
+    
+
+      <div class="column">
+        <div class="email-subscription">
+        <p>Receive updates on our products and events in store</p>
+        <form>
+          <input type="email" placeholder="Email address">
+          <button type="submit">Subscribe</button>
+        </form>
+        </div>
       </div>
-
-
-      <div class="email-subscription">
-      <h5>Receive updates on our products and events in store</h5>
-      <form>
-        <input type="email" placeholder="Email address">
-        <button type="submit">Subscribe</button>
-      </form>
     </div>
 
-    <div class="sns-icons">
-      <i class="fab fa-instagram"></i>
-    </div>
-
+    <hr class="solid">
+    <p>© 2023 càphê</p>
+  </div>
   </footer>
 
 
@@ -152,9 +200,8 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
-    <script src="https://unpkg.com/react@latest/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@latest/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://kit.fontawesome.com/1b7c9c4617.js" crossorigin="anonymous"></script>
+  
     <!-- <script type="text/jsx"> 
       ReactDOM.render(<App />, document.getElementById('app'));
     </script> -->

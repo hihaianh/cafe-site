@@ -22,7 +22,8 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+    text-decoration: none;
+    color: #868484;
 }
 
 
@@ -46,8 +47,8 @@ nav ul li a:hover {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: white;
     min-width: 160px;
+    background-color: #f1e7d4;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 1;
 }
@@ -55,6 +56,7 @@ nav ul li a:hover {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
 
 .dropdown-content a {
     color: black;
@@ -94,16 +96,68 @@ body {
     font-family: 'Crimson Text', serif;
 };
 
-p {
+.definition p {
     font-family: 'Crimson Text', serif;
-    font-size: 24px;
-};
-
-.definition h2{
-    font-family: 'Cardo', serif;
     font-size: 40px;
     margin-bottom: 100px;
 }
+
+.ethos-container {
+    margin-left: 80px;
+    margin-bottom: 80px;
+    overflow: auto;
+  }
+
+  .ethos-container img {
+    float: left;
+    margin-right: 10px;
+    width: 300px;
+    height: auto;
+  }
+.ethos-container h5 {
+    text-align: left;
+    width: 60%;
+    font-weight: lighter;
+    letter-spacing: 0.45px;
+    color: #333333
+}
+
+.ethos-container .ethos-right {
+    overflow: hidden;
+}
+
+.ethos-container .ethos-right p a {
+    text-decoration: none;
+    letter-spacing: 0.45px;
+    color: #333333
+}
+
+.ethos-container .ethos-right p a:hover {
+    text-decoration: none;
+    letter-spacing: 0.45px;
+    color: #868484
+}
+
+.sale-container {
+    display: flex;
+    align-items: center;
+}
+.sale-container h5 {
+    text-align: left;
+    width: 50%;
+}
+
+.sale-container img {
+    width: 300px;
+    height: auto;
+}
+
+.sale-container a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+
 
 .image-grid {
     display: flex;
@@ -197,22 +251,57 @@ form button {
 
 .footer {
     padding: 20px;
-    background-color: brown;
+    margin-left: 40px;
 }
+
+#footer-container {
+    background-color: #f1e7d4;
+    height: 425px;
+}
+
+.sns-icons ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+
+  .sns-icons li {
+    margin-top: 20px;
+    margin-left: 50px;
+  }
 
 .columns {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 130px;
 }
 
 .column {
     flex: 1;
     margin-right: 20px;
+    margin-top: 35px;
 }
 
 .column ul {
     list-style: none;
+}
+
+
+.column ul li {
+    padding: 8px;
+    font-family: 'Cardo';
+}
+
+.column ul a {
+    color: black;
+    text-decoration: none;
+}
+
+.column img {
+    width: 150px;
+    height: 150px;
+    margin-left: 40px;
 }
 
 .footer-icons {
@@ -226,16 +315,29 @@ form button {
     margin-right: 40px;
 }
 
-.email-subscription h5 {
+.email-subscription p {
     margin-bottom: 10px;
+    font-family: 'Cardo';
+    text-align: left;
+}
+
+.email-subscription form {
+    display: flex;
+    align-items: center;
 }
 
 .email-subscription input[type="email"] {
     padding: 10px;
-    width: 250px;
+    width: 180px;
     margin-right: 10px;
 }
 
 .email-subscription button {
-    padding: 10px 20px;
+    padding: 8px 8px;
+    background-color: #e9dac3;
+    border: none;
+}
+
+footer p {
+    margin-left: 20px;
 }
