@@ -1,4 +1,19 @@
-<!DOCTYPE html>
+<?php
+
+$name = $_POST['name'];
+$email = $_POST['email'];
+$number = $_POST['number'];
+$message = $_POST['message'];
+ 
+
+$mailheader = "From: " .$name. "<" .$email.">\r\n";
+
+$recipient = "hiannnguyen@gmail.com";
+
+mail($recipient, $subject, $message, $mailheader)
+or die('Error!');
+
+echo('<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -27,29 +42,18 @@
 
   <header id="header" class="header"></header>
 
-    <div class="contact-extract">
-        <h2>Send Us A Message</h2>
-        <p>Got questions, feedback, or just want to say hello? You can contact us by completing the form. We'd love to hear from you!</p>
-    </div>
-
-<div class="form-image-contained">
-    <div class="form-container">
-        <form action="mail.php" method="POST">
-            <input type="text" placeholder="Name" required><br>
-            <input type="text" placeholder="Email" required><br>
-            <input type="text" placeholder="Phone Number"><br>
-            <textarea placeholder="Message" name="message" rows="6" required></textarea><br>
-            <button type="submit">Submit</button>
-        </form>
-    </div>
-
-
-  <img src="./images/viet-coffee.jpg" alt="cup of iced vietnamese coffee">
+    <div class="center-thanks">
+        <div class="thanks-form-container">
+            <h3>Form submitted.</h3><br>
+            <h3>Thank you for contacting us. We will get back to you as soon as possible!</h3>
+            <p class="back">Go back to the <a href="index.html">homepage&#8594;</a></p>
+        </div>
 </div>
-
 
 <footer id="footer" class="footer"></footer>
 <script src="https://kit.fontawesome.com/1b7c9c4617.js" crossorigin="anonymous"></script>
 <script src="main.js"></script>
-
 </body>
+')
+
+?>
