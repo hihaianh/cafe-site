@@ -329,6 +329,59 @@ form button {
 .thanks-form-container .back a:hover {
     color: grey;
 }
+/* shop page  */
+.filter-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px; /* Adjust the width as desired */
+}
+
+.filter-select {
+    margin-left: auto;
+    /* width: 20%; */
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: #fff;
+    background-image: url('./images/down-arrow.png');
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-color:#FFFFF0;
+    cursor: pointer;
+}
+
+.grid-of-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.grid-of-images figure {
+    margin: 50px;
+    text-align: center;
+}
+
+.grid-of-images img {
+    width: 100%;
+    height: 300px;
+    display: block;
+}
+
+.grid-of-images figcaption {
+    margin-top: 10px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.grid-of-images .product-name {
+    margin-bottom: 5px;
+}
+
 /* footer */
 .footer {
     width: 100%;
@@ -426,3 +479,5 @@ footer p {
 .column ul li a:hover {
     color:#868484;
 }
+
+
