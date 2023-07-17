@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/hihaianh/cafe-site/issues"
   },
-  "homepage": "https://github.com/hihaianh/cafe-site#readme"
+  "homepage": "https://github.com/hihaianh/cafe-site#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2"
+  }
 }
