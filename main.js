@@ -11,7 +11,7 @@
           </div>
         </li>
       </div>
-      <li><a href="#">Shop</a></li>
+      <li><a href="shop.html">Shop</a></li>
       <li><a href="about.html">About Us</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li>

@@ -120,27 +120,44 @@ body {
     font-family: 'Crimson Text', serif;
 };
 
-.definition p {
-    font-family: 'Crimson Text', serif;
+.definition {
+    width: 100%;
+    max-height: 150px; 
+}
+
+#caphe-sentence {
+    font-family: 'Cardo';
+    letter-spacing: 0.45px;
+    font-style: italic;
+    font-weight: lighter;
     font-size: 40px;
-    margin-bottom: 100px;
+    width: 70%;
+    text-align: center;
 }
 
 .ethos-container {
+    margin-top: 150px;
     margin-left: 80px;
     margin-bottom: 80px;
     overflow: auto;
   }
 
+  .ethos-title {
+    margin-left: 80px;
+    margin-bottom: 30px;
+  }
+
   .ethos-container img {
     float: left;
-    margin-right: 10px;
-    width: 300px;
-    height: auto;
+    margin-right: 30px;
+    margin-left: 50px;
+    width: 500px;
+    height: 450px;
   }
 .ethos-container h5 {
     text-align: left;
-    width: 60%;
+    margin-left: 80px;
+    width: 70%;
     font-weight: lighter;
     letter-spacing: 0.45px;
     color: #333333
@@ -162,26 +179,87 @@ body {
     color: #868484
 }
 
-.sale-container {
-    display: flex;
-    align-items: center;
+.last-line {
+    margin-top: 80px;
+    margin-left: 80px;
+    font-family: 'Cardo';
+    font-size: 16px;
+    letter-spacing: 0.45px;
 }
-.sale-container h5 {
+
+#hyperlink {
+    text-decoration: underline;
+    font-style: italic;
+}
+
+.visit-container {
+    margin-top: 150px;
+    margin-right: 80px;
+    margin-bottom: 80px;
+    overflow: auto;
+}
+
+.visit-us {
+    margin-left: 100px;
+    margin-bottom: 30px;
+    margin-top: 80px;
+    letter-spacing: 0.45px;
+}
+
+.visit-container h5 {
     text-align: left;
-    width: 50%;
+    width: 40%;
+    font-weight: lighter;
+    letter-spacing: 0.45px;
+    margin-left: 100px;
 }
 
-.sale-container img {
-    width: 300px;
-    height: auto;
+.visit-container p {
+    margin-left: 100px;
+    margin-top: 80px;
+    font-family: 'Cardo';
+    font-size: 16px;
+    text-decoration: none;
+    letter-spacing: 0.45px;
+    color: #333333;
 }
 
-.sale-container a {
+.visit-container p a {
+    font-style: italic;
+    text-decoration: underline;
+    color: #333333;
+}
+
+.visit-container p a:hover {
+    text-decoration: none;
+    letter-spacing: 0.45px;
+    color: #868484;
+}
+
+.visit-container img {
+    float: right;
+    width: 500px;
+    height: 450px;
+    margin-left: 30px;
+    margin-right: 50px;
+}
+
+.visit-container a {
     text-decoration: none;
     color: black;
     font-size: 18px;
 }
 
+.browse-title {
+    text-align: center;
+    font-family: 'Cardo';
+    text-align: left;
+    letter-spacing: 0.45px;
+    margin-left: 100px;
+    margin-top: 180px;
+}
+
+/* about us page */
 
 .image-grid {
     display: flex;
@@ -202,38 +280,47 @@ body {
     margin-bottom: -80px;
 }
 
-h3 {
+#story-title {
     text-align: center;
+    padding-top: 80px;
+    padding-bottom: 40px;
+    letter-spacing: 0.45px;
 }
 
-.text-center {
+.text-center { 
     text-align: center;
     padding-inline: 60px;
+    max-width: 800px;
+    /* width: 70%; */
+    margin: 0 auto;
+    letter-spacing: 0.45px;
 }
 
-.text-right {
-    text-align: right;
-}
-
-.text-left {
-    text-align: left;
+.text-next-to-img {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    letter-spacing: 0.45px;
 }
 
 .image-w-text {
-    display: flex;
     align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    letter-spacing: 0.45px;
 }
 .image-w-text img {
-    margin-right: 10px;
-    width: 25%;
-    height: 250px;
-    object-fit: cover;
+    margin-bottom: 80px;
+    margin-top: 80px; 
+    width: 80%;
+    height: 80%;
 }
 
 .container-small {
-    width: 100%;
-    max-width: 670px;
+    max-width: 800px;
     margin: 0 auto;
+    align-items: center;
+    text-align: center;
 }
 
 /* contact page */
@@ -330,12 +417,28 @@ form button {
     color: grey;
 }
 /* shop page  */
+
+#products-text {
+    margin-top: 40px;
+    margin-left: 45px;
+    font-size: 30px;
+
+}
+
 .filter-header {
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 100%;
+    margin-right: 50px;
+    /* justify-content: flex-end; */
+    /* align-items: center;
+    width: 100%; */
     margin-bottom: 10px; /* Adjust the width as desired */
+}
+
+.filter-header-text {
+    font-size: 18px;
+    font-weight: lighter;
+    margin-left: 1195px;
+    margin-top: 5px;
 }
 
 .filter-select {
@@ -380,6 +483,21 @@ form button {
 
 .grid-of-images .product-name {
     margin-bottom: 5px;
+}
+
+.add-to-cart {
+    padding: 15px 30px;
+    margin-top: 20px;
+    background-color: #e9dac3;
+    font-family: 'Cardo';
+    font-weight: lighter;
+    font-size: 14px;
+    border: none;
+}
+
+.add-to-cart:hover {
+    background-color: white;
+    color: #868484;
 }
 
 /* footer */
