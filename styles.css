@@ -345,7 +345,7 @@ body {
 
 .prices-row {
     text-align: center;
-    margin-left: 250px;
+    margin-left: 335px;
     margin-top: 50px;
 }
 
@@ -359,6 +359,15 @@ body {
 .drinks-menu li {
     margin-left: 250px;
 }
+
+.drinks-menu .move-further {
+    margin-left: 295px;
+}
+
+.drinks-menu .move-right {
+    margin-left: 320px;
+}
+
 
 /* about us page */
 
