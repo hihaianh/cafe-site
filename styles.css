@@ -124,19 +124,22 @@ body {
     width: 100%;
     max-height: 150px; 
 }
+.bold-text {
+    font-size: 50px;
+}
 
 #caphe-sentence {
     font-family: 'Cardo';
     letter-spacing: 0.45px;
-    font-style: italic;
     font-weight: lighter;
-    font-size: 40px;
+    font-size: 34px;
     width: 70%;
+    margin: 0 auto;
     text-align: center;
 }
 
 .ethos-container {
-    margin-top: 150px;
+    margin-top: 200px;
     margin-left: 80px;
     margin-bottom: 80px;
     overflow: auto;
@@ -257,6 +260,104 @@ body {
     letter-spacing: 0.45px;
     margin-left: 100px;
     margin-top: 180px;
+}
+
+.card-img-top {
+    height: 450px;
+    width: 325px;
+}
+
+.cards-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 150px;
+}
+
+
+.card {
+    background-color: #FFFFF0;
+    width: 30%;
+    font-family: 'Cardo';
+    font-size: 15px;
+    margin-top: 50px;
+    border: none;
+}
+
+.card-body a {
+    background-color: #e9dac3;
+    color: black;
+    border: none;
+}
+
+.card-body a:hover {
+    background-color:white;
+    color: #868484;
+}
+
+/* visit shoreditch page */
+
+.shoreditch-container img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 100px;
+}
+
+.shoreditch-text {
+    margin: 0 auto;
+    width: 70%;
+    text-align: center;
+    font-family: 'Cardo';
+    font-size: 20px;
+    letter-spacing: 0.45px;
+    margin-top: 40px;
+}
+
+.shoreditch-text a {
+    text-decoration: underline;
+    color: black;
+    font-style: italic;
+}
+
+.shoreditch-text a:hover {
+    color:#868484;
+}
+
+.opening-times { 
+    font-family: 'Cardo';
+    font-size: 20px;
+    letter-spacing: 0.45px;
+    padding-top: 100px;
+    list-style: none;
+    padding-bottom: 100px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.opening-times li {
+    padding-top: 20px; 
+}
+
+/* menu page */
+#menu-title {
+    font-family: 'Cardo';
+    margin-left: 50px;   
+}
+
+.prices-row {
+    text-align: center;
+    margin-left: 250px;
+    margin-top: 50px;
+}
+
+.drinks-menu {
+    font-family: 'Cardo';
+    font-size: 20px;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.drinks-menu li {
+    margin-left: 250px;
 }
 
 /* about us page */

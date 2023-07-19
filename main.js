@@ -6,8 +6,8 @@
       <div class="dropdown">
         <li><a href="#">Visit &#x2304;</a>
           <div class="dropdown-content">
-              <a href="#">Shoreditch</a>
-              <a href="#">Menu</a>
+              <a href="visit.html">Shoreditch</a>
+              <a href="menu.html">Menu</a>
           </div>
         </li>
       </div>
