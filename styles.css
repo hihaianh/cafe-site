@@ -120,6 +120,12 @@ body {
     font-family: 'Crimson Text', serif;
 };
 
+
+
+#searchIcon {
+    cursor: pointer;
+}
+
 .definition {
     width: 100%;
     max-height: 150px; 
@@ -708,4 +714,55 @@ footer p {
     color:#868484;
 }
 
+#searchContainer {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #FFFFF0;
+    z-index: 2;
+}
+
+#closeIcon {
+    position: absolute;
+    top: 85px;
+    right: 0;
+    padding: 50px;
+}
+
+.peekaboo {
+    display: none;
+}
+
+.search-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+    width: 100%;
+}
+
+.searchLine-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+}
+
+.search-click {
+    margin-left: 0px;
+}
+
+#searchInput {
+    background-color: #FFFFF0;
+    padding: 10px 25px;
+    font-size: 30px;
+    border: none;
+    border-bottom: 2px solid black;
+    width: 75%;
+    outline: none;
+}
 
