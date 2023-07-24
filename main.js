@@ -1,4 +1,4 @@
-    header.innerHTML = `<nav>
+header.innerHTML = `<nav>
     <div style="width: 100px">
       <a href="index.html"><img src="logo.png" style="width: 100%; height: auto" /></a>
     </div>
@@ -64,7 +64,7 @@
         <div class="searchLine-container">
           <input type="text" id="searchInput" placeholder="Search...">
         </div>
-        <div class="search-click">
+        <div class="search-click" id="submitSearch">
           <i class="fa-solid fa-magnifying-glass fa-2xl" style="color: #000000;"></i>
         </div>
       </div>
@@ -141,14 +141,21 @@ function toggleSearch() {
   searchContainer.classList.toggle('peekaboo');
 }
 
+//event listener that listens out for user's search input
+let submitSearch = document.getElementById('submitSearch');
+submitSearch.addEventListener('click', performSearch);
 //perform search based on user's input
 function performSearch() {
-  let searchQuery = searchInput.value.trim();
+  let searchQuery = document.getElementById('searchInput').value.trim().toLowerCase();
+
+  const filteredProducts = products.filter(product => product.name.toLowerCase().includes(searchQuery))
+
+  renderProducts(filteredProducts)
+  //need to make it close search container to unveil results. and to be able to make search queries on any page.
+
   //search a list of items / fetch results from an API
 
 }
-
-
 
 // const cart = [];
 

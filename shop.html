@@ -27,21 +27,23 @@
 
     <h5 id="products-text">All Products -</h5>
   
+
+    <div id="productsList"></div>
     
     <!-- scrollbar to filter feed -->
 
 
     <div class="filter-header">
         <span class="filter-header-text">Sort By:</span>
-        <select class="filter-select">
-            <option value="">Default</option>
-            <option value="price">Price, low to high</option>
-            <option value="rating">Price, high to low</option>
+        <select class="filter-select" id="filterSelect">
+            <option value="default">Default</option>
+            <option value="lowToHigh">Price, low to high</option>
+            <option value="highToLow">Price, high to low</option>
             <!-- Add more sorting options as needed -->
         </select>
     </div>
 
-    <div class="grid-of-images">
+    <div class="grid-of-images" id="gridOfProducts">
                 <figure class="ceramic-cup">
                     <img src="./images/ceramic-cup.jpg" alt="ceramic cup">
                     <figcaption class="product-name">Ceramic cup</figcaption>
@@ -90,4 +92,5 @@
 <footer id="footer" class="footer"></footer>
 <script src="https://kit.fontawesome.com/1b7c9c4617.js" crossorigin="anonymous"></script>
 <script src="main.js"></script>
+<script src="products.js"></script>
 </html>
