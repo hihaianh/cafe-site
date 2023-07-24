@@ -33,7 +33,7 @@ const products = [
 
 //to render products
 
-function renderProducts(productsList) {
+function renderProducts(productsList, targetElementId) {
     const gridOfProducts = document.getElementById('gridOfProducts');
     gridOfProducts.innerHTML = '';
 
@@ -68,7 +68,6 @@ function renderProducts(productsList) {
 }
 
 //event listener for sort by bar
-
 const filterSelect = document.getElementById('filterSelect');
 filterSelect.addEventListener("change", function (event) {
     let sortedProducts = [...products]; //copy of products arr
@@ -83,5 +82,42 @@ filterSelect.addEventListener("change", function (event) {
 
     renderProducts(sortedProducts)
 })
+
+
+//for search
+
+function renderSearch(productsList, targetElementId) {
+    const targetElement = document.getElementById('searchResults');
+    targetElement.innerHTML = '';
+
+    productsList.forEach((product) => {
+        const figure = document.createElement('img');
+        figure.className = 'product-listing';
+
+        const img = document.createElement('img');
+        img.src = product.image;
+        img.alt = product.name;
+
+        const figcaptionName = document.createElement('figcaption');
+        figcaptionName.className = 'product-name';
+        figcaptionName.textContent = product.name;
+
+        const figcaptionPrice = document.createElement('figcaption');
+        figcaptionPrice.className = 'product-price';
+        figcaptionPrice.textContent = '£' + product.price.toFixed(2);
+
+        const button = document.createElement('button');
+        button.className = 'add-to-cart';
+        button.textContent = 'Add to Cart';
+
+        figure.appendChild(img);
+        figure.appendChild(figcaptionName);
+        figure.appendChild(figcaptionPrice);
+        figure.appendChild(button);
+
+        targetElement.appendChild('figure')
+
+    })
+}
 
 

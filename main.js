@@ -126,6 +126,7 @@ header.innerHTML = `<nav>
     <p>© 2023 càphê</p>
   </div>`
 
+
 //add event listener for search icon
 let search = document.getElementById('searchIcon')
 console.log(search)
@@ -141,14 +142,19 @@ function toggleSearch() {
   searchContainer.classList.toggle('peekaboo');
 }
 
+
 //event listener that listens out for user's search input
 let submitSearch = document.getElementById('submitSearch');
 submitSearch.addEventListener('click', performSearch);
+
 //perform search based on user's input
 function performSearch() {
-  let searchQuery = document.getElementById('searchInput').value.trim().toLowerCase();
+  let searchQuery = document.getElementById(searchInput).value.trim().toLowerCase();
 
+  //filter the products based on searchQuery
   const filteredProducts = products.filter(product => product.name.toLowerCase().includes(searchQuery))
+  //redirect to window containing results w/ search query URL param
+  window.location.href = `results.html?q=${encodeURIComponent(searchQuery)}`
 
   renderProducts(filteredProducts)
   //need to make it close search container to unveil results. and to be able to make search queries on any page.
@@ -156,69 +162,3 @@ function performSearch() {
   //search a list of items / fetch results from an API
 
 }
-
-// const cart = [];
-
-// //function to handle adding an item to cart
-// function addToCart(event) {
-//   const button = event.target;
-//   const productName = button.dataset.product;
-//   const productPrice = parseFloat(button.dataset.price);
-
-//   cart.push({name: productName, price: productPrice})
-
-//   displayCart();
-// }
-
-// //function to display shopping cart contents
-// function displayCart() {
-//   const cartDiv = document.getElementById('cart');
-//   cartDiv.innerHTML = '';
-
-//   //calculate total price of all items in cart
-//   let totalPrice = 0;
-
-//   cart.forEach(item => {
-//     const itemDiv = document.createElement('div');
-//     itemDiv.innerHTML = `${item.name} - $${item.price.toFixed(2)}`;
-//     cartDiv.appendChild(itemDiv)
-
-//     totalPrice += item.price
-//   })
-
-//   //display total price
-
-//   const totalDiv = document.createElement('div');
-//   totalDiv.innerHTML = `<strong>Total: $${totalPrice.toFixed(2)}</strong>`;
-//   cartDiv.appendChild(totalDiv);
-// }
-
-// //added event listeners to all add to cart buttons- it'll add to cart when you 'click' the button
-
-// const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
-// addToCartButtons.forEach(button => {
-//   button.addEventListener('click', addToCart)
-// });
-
-
-
-
-//   //function to perform search
-// function performSearch() {
-//   //get the search term from the input field
-
-// }
-
-
-// //attach event Listener to search button
-
-// document.getElementById('search-icon')
-
-// document.getElementById('search-word').addEventListener('click', performSearch())
-
-// //Make search work by just pressing enter key
-// document.getElementById('searchInput').addEventListener('keypress', function(event) {
-//   if (event.key === 'Enter') {
-//     performSearch();
-//   }
-// })
