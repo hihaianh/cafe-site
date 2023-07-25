@@ -149,7 +149,7 @@ submitSearch.addEventListener('click', performSearch);
 
 //perform search based on user's input
 function performSearch() {
-  let searchQuery = document.getElementById(searchInput).value.trim().toLowerCase();
+  let searchQuery = document.getElementById('searchInput').value.trim().toLowerCase();
 
   //filter the products based on searchQuery
   const filteredProducts = products.filter(product => product.name.toLowerCase().includes(searchQuery))
