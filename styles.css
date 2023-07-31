@@ -766,3 +766,71 @@ footer p {
     outline: none;
 }
 
+/* cart.html */
+
+#shoppingCart {
+    text-align: right;
+    margin-right: 150px;
+    margin-top: 60px;
+}
+
+#deliveryMethod {
+    display: inline-block;
+    margin-left: 20px;
+    width: 50%;
+}
+
+.deliveryOption {
+    margin-top: 10px;
+}
+
+#billingAddress {
+    display: inline-block;
+    width: 50%;
+    margin-left: 20px;
+}
+
+#cartProducts {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: right;
+    text-align: right;
+}
+
+.cart-product {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.cart-product img {
+    max-width: 80px;
+    margin-right: 10px;
+}
+
+.cart-product p {
+    margin: 0;
+}
+
+.quantity input[type="number"] {
+    width: 40px;
+}
+
+#decrementBtn, #incrementBtn, #removeBtn {
+    background-color: #e9dac3; 
+    border: none;
+}
+
+#removeBtn {
+    padding: 6px;
+}
+
+@media screen and (max-width: 600px) {
+    .cart-product {
+        width: 100%;
+    }
+}
+
+

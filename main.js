@@ -20,7 +20,7 @@ header.innerHTML = `<nav>
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="cart.html">
           <i class="fas fa-shopping-cart" style="color: #000000;"></i>
         </a>
       </li>
@@ -50,7 +50,7 @@ header.innerHTML = `<nav>
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="cart.html">
           <i class="fas fa-shopping-cart" style="color: #000000;"></i>
         </a>
       </li>
@@ -162,3 +162,68 @@ function performSearch() {
   //search a list of items / fetch results from an API
 
 }
+
+// Step 1: Add event listeners to "Add to Cart" buttons
+// Step 2: Shopping Cart data structure (array to store cart items)
+// Step 3: Function to add items to the cart
+// Check if the item already exists in the cart
+// If item already exists, increase its quantity
+// If item does not exist, add it to the cart
+// Update cart display
+
+let cart = [];
+
+function addToCart(product) {
+  let existingItem = cartItems.find((item) =>
+    item.name === product.name
+  )
+  if (existingItem) {
+    existingItem.quantity++
+  } else {
+    cartItems.push({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      quantity: 1,
+      image: product.image,
+    })
+  }
+  localStorage.setItem('cartItems', JSON.stringify(cartItems))
+}
+
+function removeFromCart(name) {
+  // Filter out the item with the provided name from the cart array
+  let cart = cartItems.filter((item) => item.name !== name);
+  // Save the updated cartItems to localStorage
+  localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+  // Call the renderCartProducts function to update the cart display
+  renderCartProducts(cartItems);
+}
+
+//quantity counter
+document.addEventListener('DOMContentLoaded', function() {
+  const decrementBtn = document.getElementById('decrementBtn')
+  const incrementBtn = document.getElementById('incrementBtn')
+  const quantityInput = document.getElementById('quantityInput')
+
+  decrementBtn.addEventListener('click', decrement);
+  incrementBtn.addEventListener('click', increment);
+
+})
+
+//parseint parses a string argument to an integer
+function increment() {
+  let currentQuantity = parseInt(quantityInput.value)
+  quantityInput.value = currentQuantity + 1
+}
+
+function decrement() {
+  let currentQuantity = parseInt(quantityInput.value)
+  if (currentQuantity > 1) {
+      quantityInput.value = currentQuantity - 1
+  }
+}
+
+//de;ete item off cart btn + functionality]
+
