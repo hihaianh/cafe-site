@@ -171,59 +171,5 @@ function performSearch() {
 // If item does not exist, add it to the cart
 // Update cart display
 
-let cart = [];
-
-function addToCart(product) {
-  let existingItem = cartItems.find((item) =>
-    item.name === product.name
-  )
-  if (existingItem) {
-    existingItem.quantity++
-  } else {
-    cartItems.push({
-      id: product.id,
-      name: product.name,
-      price: product.price,
-      quantity: 1,
-      image: product.image,
-    })
-  }
-  localStorage.setItem('cartItems', JSON.stringify(cartItems))
-}
-
-function removeFromCart(name) {
-  // Filter out the item with the provided name from the cart array
-  let cart = cartItems.filter((item) => item.name !== name);
-  // Save the updated cartItems to localStorage
-  localStorage.setItem('cartItems', JSON.stringify(cartItems));
-
-  // Call the renderCartProducts function to update the cart display
-  renderCartProducts(cartItems);
-}
-
-//quantity counter
-document.addEventListener('DOMContentLoaded', function() {
-  const decrementBtn = document.getElementById('decrementBtn')
-  const incrementBtn = document.getElementById('incrementBtn')
-  const quantityInput = document.getElementById('quantityInput')
-
-  decrementBtn.addEventListener('click', decrement);
-  incrementBtn.addEventListener('click', increment);
-
-})
-
-//parseint parses a string argument to an integer
-function increment() {
-  let currentQuantity = parseInt(quantityInput.value)
-  quantityInput.value = currentQuantity + 1
-}
-
-function decrement() {
-  let currentQuantity = parseInt(quantityInput.value)
-  if (currentQuantity > 1) {
-      quantityInput.value = currentQuantity - 1
-  }
-}
-
 //de;ete item off cart btn + functionality]
 

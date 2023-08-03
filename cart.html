@@ -18,8 +18,8 @@
 </head>
 <body>
     <header id="header" class="header"></header>
-    <h2 id="shoppingCart">Your Cart</h2>
 
+    <div class="shopping-container">
     <div class="allFormsOnLeft">    
         <h2>Contact</h2>
         <form id="contact">
@@ -57,23 +57,25 @@
     <div class="cartContainer">
     
         
-    
+        <h2 id="shoppingCart">Your Cart</h2>
         <div id="cartProducts"></div>
-            <div class="cart-product">
+            <!-- <div class="cart-product">
                 <img src="./images/ceramic-cup.jpg" alt="ceramic cup">
                 <p>Ceramic cup</p>
-                <p>£16.90</p>
-                <div class="quantity">
+                <p>£16.90</p> -->
+                <!-- <div class="quantity">
                     <button id="decrementBtn">-</button>
                     <input type="number" id="quantityInput" value="1" min="1">
                     <button id="incrementBtn">+</button>
                 </div>
                 <button id="removeBtn" onclick="removeFromCart('Ceramic cup')">Remove</button>
-            </div>
+            </div> -->
+    </div>
     </div>
 
     <footer id="footer" class="footer"></footer>
-    <script src="main.js"></script>
     <script src="products.js"></script>
+    <script src="main.js"></script>
+    
 </body>
 </html>

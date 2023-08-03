@@ -63,6 +63,7 @@ function renderProducts(productsList, targetElementId) {
         button.className = 'add-to-cart';
         button.textContent = 'Add to Cart';
 
+        button.setAttribute('data-productid', product.id)
         figure.appendChild(img);
         figure.appendChild(figcaptionName);
         figure.appendChild(figcaptionPrice);
@@ -77,21 +78,23 @@ function renderProducts(productsList, targetElementId) {
 const filterSelect = document.getElementById('filterSelect');
 
 if (filterSelect) {
+    renderProducts(products) //default
     filterSelect.addEventListener("change", function (event) {
-    let sortedProducts = [...products]; //copy of products arr
-    selectedValue = event.target.value;
-    if (selectedValue === 'lowToHigh') {
-        sortedProducts.sort((a, b) => a.price - b.price);
-    } else if (selectedValue === 'highToLow') {
-        sortedProducts.sort((a, b) => b.price - a.price);
-    } 
-    //else {
-    //     renderProducts(products) //default
-    // }
+        let sortedProducts = [...products]; //copy of products arr
+        selectedValue = event.target.value;
+        if (selectedValue === 'lowToHigh') {
+            sortedProducts.sort((a, b) => a.price - b.price);
+        } else if (selectedValue === 'highToLow') {
+            sortedProducts.sort((a, b) => b.price - a.price);
+        } 
+        //else {
+        //     renderProducts(products) //default
+        // }
 
-    renderProducts(sortedProducts)
-})
+        renderProducts(sortedProducts)
+    })
 }
+
 //for search
 
 function renderSearch(productsList, targetElementId="searchResults") {
@@ -144,87 +147,129 @@ if (currentURL?.searchParams) {
 }
 
 //shopping cart
-// Function to add item to cart
-// function addToCartClicked(event) {
 
-// }
-  
-//   // Add event listener to the "Add to Cart" buttons on the page
-//   const addToCartBtn = document.querySelectorAll('.add-to-cart');
-//   addToCartBtn.forEach((button) => {
-//     button.addEventListener('click', addToCartClicked);
-//   });
-
-  // Function to render cart products
+//function to render cart products
 function renderCartProducts(cartItems) {
-    const cartProducts = document.getElementById('cartProducts');
-    cartProducts.innerHTML = '';
+    const cartProductsContainer = document.getElementById('cartProducts');
+    cartProductsContainer.innerHTML = '';
   
-    cartItems.forEach((item) => {
+    cartItems.forEach((product) => {
       const cartProduct = document.createElement('div');
       cartProduct.className = 'cart-product';
   
-      const productImage = document.createElement('img'); // Create an image element
-      productImage.src = item.image; // Set the image source to the product's image URL
-      productImage.alt = item.name; // Set the image alt attribute to the product's name
-      cartProduct.appendChild(productImage); // Add the image to the cartProduct
+      const productImage = document.createElement('img');
+      productImage.src = product.image;
+      productImage.alt = product.name;
   
       const productName = document.createElement('p');
-      productName.textContent = item.name;
+      productName.textContent = product.name;
   
       const productPrice = document.createElement('p');
-      productPrice.textContent = '£' + item.price.toFixed(2);
+      productPrice.textContent = '£' + product.price.toFixed(2);
   
-      const productQuantity = document.createElement('p');
-      productQuantity.textContent = 'Quantity: ' + item.quantity;
-  
+      var productQuantity = document.createElement('input');
+      productQuantity.type = 'number';
+      productQuantity.className = 'quantityInput';
+      productQuantity.min = 1;
+      productQuantity.max = 10;
+      productQuantity.value = product.quantity;
+
+    //   <div class="quantity">
+    //                 <button id="decrementBtn">-</button>
+    //                 <input type="number" id="quantityInput" value="1" min="1">
+    //                 <button id="incrementBtn">+</button>
+    //             </div>
+      const removeProduct = document.createElement('button');
+      removeProduct.textContent = 'Remove';
+      removeProduct.addEventListener('click', removeFromCart);
+      function removeFromCart(id) {
+        cartProducts = cartProducts.filter((item) => (item.id !== product.id))
+        localStorage.setItem('cartProducts', JSON.stringify(cartProducts))
+        renderCartProducts(cartProducts)
+      }
+
+      cartProduct.appendChild(productImage);
       cartProduct.appendChild(productName);
       cartProduct.appendChild(productPrice);
       cartProduct.appendChild(productQuantity);
-  
-      cartProducts.appendChild(cartProduct);
+      cartProduct.appendChild(removeProduct)
+      cartProductsContainer.appendChild(cartProduct);
     });
   }
-  
-  
-  // Render cart products when the page loads
-  //renderCartProducts();
+// Add event listener to the "Add to Cart" buttons on the page
+  const addToCartBtn = document.querySelectorAll('.add-to-cart');
+  //forEach only works for arr
+    addToCartBtn.forEach((button) => {
+        button.addEventListener('click', addToCart);
+    });
 
-//function to remove a product from cart
+//the function to addto cart is on main.js page
+let cartProducts = [];
+//load cart products in cart.html from localStorage
+if (localStorage.getItem('cartProducts')) {
+    cartProducts = JSON.parse(localStorage.getItem('cartProducts'))
+}
 
-// function removeFromCart(productName) {
-//     const index = cart.findIndex((item) => item.name === productName)
-    
-//     if (index !== -1) {
-//         cart.splice(index, 1);
-//         renderCartProducts();
-//     }
-// }
+function addToCart(e) {
+    const button = e.target
+    const productId = button.getAttribute('data-productid')
+    const existingItem = cartProducts.find((item) =>
+        item.id == productId
+    )
+    if (existingItem) {
+        existingItem.quantity++
+    } else {
+        //returns object, product
+        const productFinder = products.find((product) => {
+            return productId == product.id
+        })
+        
+        
+        cartProducts.push({
+            ...productFinder, 
+            quantity: 1
+        })
+    }
+    localStorage.setItem('cartProducts', JSON.stringify(cartProducts));
+    //renderCartProducts(cartProducts);
+    console.log('klevs cart: ', cartProducts);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  const decrementBtn = document.getElementById('decrementBtn');
+  const incrementBtn = document.getElementById('incrementBtn');
+  const quantityInput = document.getElementById('quantityInput');
+
+  decrementBtn.addEventListener('click', decrement);
+  incrementBtn.addEventListener('click', increment);
+
+  // Load the cart items from localStorage (optional)
+  if (localStorage.getItem('cartProducts')) {
+    cartProducts = JSON.parse(localStorage.getItem('cartProducts'));
+  }
+
+  // Call the renderCartProducts function to display the cart items
+  renderCartProducts(cartProducts);
+});
+
+// parseint parses a string argument to an integer
+function increment() {
+  let currentQuantity = parseInt(quantityInput.value);
+  quantityInput.value = currentQuantity + 1;
+}
+
+function decrement() {
+  let currentQuantity = parseInt(quantityInput.value);
+  if (currentQuantity > 1) {
+    quantityInput.value = currentQuantity - 1;
+  }
+}
+
+//calling function to display cart items when page loads
+renderCartProducts(cartProducts);
 
 
 //quantity counter
-// const decrementBtn = document.getElementById('decrementBtn')
-// const incrementBtn = document.getElementById('incrementBtn')
-// const quantityInput = document.getElementById('quantityInput')
-
-// decrementBtn.addEventListener('click', decrement);
-// incrementBtn.addEventListener('click', increment);
-
-// //parseint parses a string argument to an integer
-// function increment() {
-//     quantityInput.value = product.quantity + 1
-// }
-
-// function decrement() {
-//     if (product.quantity > 1) {
-//         quantityInput.value = product.quantity - 1
-//     }
-// }
-
-// function updateQuantity(product, newQuantity) {
-//     product.quantity = parseInt(newQuantity)
-//     renderCartProducts(cartProducts)
-// }
 //another way:
 // function increment(product) {
 //     product.quantity = (product.quantity || 1) + 1;
@@ -244,43 +289,5 @@ function renderCartProducts(cartItems) {
 //   }
 //de;ete item off cart btn + functionality]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//first param should be an array of products that has been filtered by user search query
-
-// document.addEventListener('DOMContentLoaded', function() {
-//     const searchButton = document.getElementById('submitSearch');
-//     searchButton.addEventListener('click', finalSearchStep());
-// });
-
-
-// function finalSearchStep() {
-//     const searchInput = document.getElementById('searchInput').value.trim().toLowerCase();
-//     const redirectToNewPage = new URL(window.location.href);
-  
-//     for (const [key, value] of redirectToNewPage.searchParams.entries()) {
-//         redirectToNewPage.searchParams.set('q', searchInput)
-    
-//     }
-    
-//     const filteredProducts = products.filter((product) => {
-//         product.name.includes(redirectToNewPage)
-        
-//     })
-//     renderSearch(filteredProducts);
-// }
 
 
