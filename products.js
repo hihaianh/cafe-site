@@ -148,6 +148,10 @@ if (currentURL?.searchParams) {
 
 //shopping cart
 
+function updateCart(cartItems) {
+    localStorage.setItem('cartItems', JSON.stringify(cartItems))
+}
+
 //function to render cart products
 function renderCartProducts(cartItems) {
     const cartProductsContainer = document.getElementById('cartProducts');
@@ -166,19 +170,35 @@ function renderCartProducts(cartItems) {
   
       const productPrice = document.createElement('p');
       productPrice.textContent = '£' + product.price.toFixed(2);
-  
-      var productQuantity = document.createElement('input');
+      
+      const productQuantity = document.createElement('input');
       productQuantity.type = 'number';
       productQuantity.className = 'quantityInput';
+      productQuantity.setAttribute('data-productid', product.id);
       productQuantity.min = 1;
       productQuantity.max = 10;
       productQuantity.value = product.quantity;
+      //add a event listener so when quantity changes it updates and updates in localStorage- need to use event for new data, not hard-coded data used earlier (productQuantity.value).
+      productQuantity.addEventListener('input', (e) => {
+        const updatedQuantity = e.target.value
+        //console.log('updated quantity: ', updatedQuantity);
+        const productId = e.target.getAttribute('data-productid')
+        //console.log('product id: ', productId);
+        const existingItem = cartProducts.find((item) =>
+        item.id == productId
+        )
+        //set limits to updatedQuantity - min: 1, max: 10.
+        if (existingItem && updatedQuantity >= 1 && updatedQuantity <= 10) {
+            existingItem.quantity = parseInt(updatedQuantity);
+            //update to localStorage
+            localStorage.setItem('cartProducts', JSON.stringify(cartProducts))
+        } 
+        //console.log(existingItem);
+      })  
 
-    //   <div class="quantity">
-    //                 <button id="decrementBtn">-</button>
-    //                 <input type="number" id="quantityInput" value="1" min="1">
-    //                 <button id="incrementBtn">+</button>
-    //             </div>
+      //warning/border color change to red if quantity exceeds 10 or below 0
+    
+    //de;ete item off cart btn + functionality]
       const removeProduct = document.createElement('button');
       removeProduct.textContent = 'Remove';
       removeProduct.addEventListener('click', removeFromCart);
@@ -203,7 +223,7 @@ function renderCartProducts(cartItems) {
         button.addEventListener('click', addToCart);
     });
 
-//the function to addto cart is on main.js page
+
 let cartProducts = [];
 //load cart products in cart.html from localStorage
 if (localStorage.getItem('cartProducts')) {
@@ -235,59 +255,10 @@ function addToCart(e) {
     console.log('klevs cart: ', cartProducts);
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-  const decrementBtn = document.getElementById('decrementBtn');
-  const incrementBtn = document.getElementById('incrementBtn');
-  const quantityInput = document.getElementById('quantityInput');
 
-  decrementBtn.addEventListener('click', decrement);
-  incrementBtn.addEventListener('click', increment);
+ //add all prices at the end of the cart
 
-  // Load the cart items from localStorage (optional)
-  if (localStorage.getItem('cartProducts')) {
-    cartProducts = JSON.parse(localStorage.getItem('cartProducts'));
-  }
-
-  // Call the renderCartProducts function to display the cart items
-  renderCartProducts(cartProducts);
-});
-
-// parseint parses a string argument to an integer
-function increment() {
-  let currentQuantity = parseInt(quantityInput.value);
-  quantityInput.value = currentQuantity + 1;
-}
-
-function decrement() {
-  let currentQuantity = parseInt(quantityInput.value);
-  if (currentQuantity > 1) {
-    quantityInput.value = currentQuantity - 1;
-  }
-}
 
 //calling function to display cart items when page loads
 renderCartProducts(cartProducts);
-
-
-//quantity counter
-//another way:
-// function increment(product) {
-//     product.quantity = (product.quantity || 1) + 1;
-//     renderCartProducts(cartProducts);
-//   }
-  
-//   function decrement(product) {
-//     if (product.quantity && product.quantity > 1) {
-//       product.quantity -= 1;
-//       renderCartProducts(cartProducts);
-//     }
-//   }
-  
-//   function updateQuantity(product, newQuantity) {
-//     product.quantity = parseInt(newQuantity) || 1;
-//     renderCartProducts(cartProducts);
-//   }
-//de;ete item off cart btn + functionality]
-
-
 

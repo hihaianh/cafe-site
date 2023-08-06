@@ -114,8 +114,8 @@ header.innerHTML = `<nav>
       <div class="column">
         <div class="email-subscription">
         <p>Receive updates on our products and events in store</p>
-        <form>
-          <input type="email" placeholder="Email address">
+        <form action='' method=''>
+          <input type="email" placeholder="Email address" id="emailInput">
           <button type="submit">Subscribe</button>
         </form>
         </div>
@@ -159,17 +159,7 @@ function performSearch() {
   renderProducts(filteredProducts)
   //need to make it close search container to unveil results. and to be able to make search queries on any page.
 
-  //search a list of items / fetch results from an API
-
 }
 
-// Step 1: Add event listeners to "Add to Cart" buttons
-// Step 2: Shopping Cart data structure (array to store cart items)
-// Step 3: Function to add items to the cart
-// Check if the item already exists in the cart
-// If item already exists, increase its quantity
-// If item does not exist, add it to the cart
-// Update cart display
 
-//de;ete item off cart btn + functionality]
-
+//newsletter form (in footer) functionality w/ vanilla JS

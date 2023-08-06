@@ -788,6 +788,7 @@ footer p {
     align-items: center;
     justify-content: space-between;
     padding-right: 30px;
+    padding-bottom: 30px;
 }
 
 .cart-product img {

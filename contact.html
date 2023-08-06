@@ -34,11 +34,12 @@
 
 <div class="form-image-contained">
     <div class="form-container">
-        <form method="POST" action="/formPost" class="form">
-            <input required id="name" type="text" name="name" placeholder="Name" required><br>
-            <input required id="email" type="text" name="email" placeholder="Email" required><br>
+        <form action="https://formsubmit.co/hiannnguyen@gmail.com" method="POST" class="form">
+            <input id="name" type="text" name="name" placeholder="Name" required><br>
+            <input id="email" type="text" name="email" placeholder="Email" required><br>
             <input type="text" name="number" placeholder="Phone Number"><br>
-            <textarea required id="message" placeholder="Message" name="message" rows="6" required></textarea><br>
+            <textarea id="message" placeholder="Message" name="message" rows="6" required></textarea><br>
+            <input type="hidden" name="_next" value="thanks.html">
             <button type="submit">Submit</button>
         </form>
     </div>
