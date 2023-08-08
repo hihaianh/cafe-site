@@ -190,6 +190,8 @@ function renderCartProducts(cartItems) {
         //set limits to updatedQuantity - min: 1, max: 10.
         if (existingItem && updatedQuantity >= 1 && updatedQuantity <= 10) {
             existingItem.quantity = parseInt(updatedQuantity);
+
+            updateTotalCartPrice(cartProducts)
             //update to localStorage
             localStorage.setItem('cartProducts', JSON.stringify(cartProducts))
         } 
@@ -206,6 +208,7 @@ function renderCartProducts(cartItems) {
         cartProducts = cartProducts.filter((item) => (item.id !== product.id))
         localStorage.setItem('cartProducts', JSON.stringify(cartProducts))
         renderCartProducts(cartProducts)
+        updateTotal(cartProducts)
       }
 
       cartProduct.appendChild(productImage);
@@ -256,7 +259,30 @@ function addToCart(e) {
 }
 
 
- //add all prices at the end of the cart
+//add all prices at the end of the cart, needs to show up when products are all there, or quantity is added or deleted.
+function updateTotalCartPrice(cartItems) {
+//add to element id, totalPrice
+    const totalCartPriceElement = document.getElementById('totalPrice');
+    const totalPrice = calculateTotal(cartItems)
+    totalCartPriceElement.textContent = 'Total: £' + totalPrice.toFixed(2)
+
+    function calculateTotal(cartItems) {
+        let totalBill = 0;
+            for (let i = 0; i < cartItems.length; i++) {
+                totalBill += cartItems[i].price * cartItems[i].quantity
+            }
+        return totalBill
+    }
+}
+
+if (localStorage.getItem('cartProducts')) {
+    cartProducts = JSON.parse(localStorage.getItem('cartProducts'))
+    renderCartProducts(cartProducts)
+    updateTotalCartPrice(cartProducts)
+}
+
+//add event listeners to quantity input when it changes and to update total price- already added to quantityInput above.
+
 
 
 //calling function to display cart items when page loads
