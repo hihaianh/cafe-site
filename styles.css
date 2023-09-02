@@ -777,10 +777,19 @@ footer p {
 .deliveryOption {
     margin: 10px;
 }
+input[type="radio"] {
+    width: 10%;
+    margin-top: 25px;
+}
+
+#sameAsBilling {
+    width: 10%;
+    margin-top: 20px;
+}
 
 #billingAddress {
     display: inline-block;
-    width: 50%;
+    widtH: 100%;
 }
 
 .cart-product {
@@ -811,6 +820,14 @@ footer p {
 
 #removeBtn {
     padding: 6px;
+}
+
+#totalPrice {
+    margin-top: 60px;
+    font-weight: bolder;
+    font-size: 22px;
+    text-align: right;
+    margin-right: 45px;
 }
 
 @media screen and (max-width: 600px) {
