@@ -6,6 +6,16 @@
 		<lastmod>2023-07-28</lastmod>
 	</url>
 	<url>
+		<loc>https://www.caphe/auth/register.php</loc>
+		<priority>0.50</priority>
+		<lastmod>2024-01-18</lastmod>
+	</url>
+	<url>
+		<loc>https://www.caphe/auth/config.php</loc>
+		<priority>0.50</priority>
+		<lastmod>2024-01-18</lastmod>
+	</url>
+	<url>
 		<loc>https://www.caphe/visit.html</loc>
 		<priority>0.50</priority>
 		<lastmod>2023-07-18</lastmod>
@@ -44,5 +54,10 @@
 		<loc>https://www.caphe/about.html</loc>
 		<priority>0.50</priority>
 		<lastmod>2023-07-24</lastmod>
+	</url>
+	<url>
+		<loc>https://www.caphe/auth/login.php</loc>
+		<priority>0.50</priority>
+		<lastmod>2024-01-18</lastmod>
 	</url>
 </urlset>

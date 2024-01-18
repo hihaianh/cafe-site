@@ -24,6 +24,10 @@ header.innerHTML = `<nav>
           <i class="fas fa-shopping-cart" style="color: #000000;"></i>
         </a>
       </li>
+      <li>
+        <a href="user.html">
+        <i class="fa-solid fa-user" style="color: #000000;"></i>
+      </li>
     </ul>
   </nav>
   <div id="searchContainer" class="peekaboo">

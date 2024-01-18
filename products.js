@@ -19,7 +19,7 @@ const products = [
     },
     {
         id: 4,
-        name: 'Oolong Tea Set',
+        name: 'oolong tea set',
         price: 25.00,
         image: './images/oolong-tea-set.jpg'
     },
@@ -51,22 +51,30 @@ function renderProducts(productsList, targetElementId) {
         img.src = product.image;
         img.alt = product.name;
 
+        const nameAndPriceContained = document.createElement('div');
+        nameAndPriceContained.className = 'name-price-container';
+
         const figcaptionName = document.createElement('figcaption');
         figcaptionName.className = 'product-name'
         figcaptionName.textContent = product.name;
+
+        nameAndPriceContained.appendChild(figcaptionName)
 
         const figcaptionPrice = document.createElement('figcaption')
         figcaptionPrice.className = 'product-price';
         figcaptionPrice.textContent = '£' + product.price.toFixed(2); //to show two decimal places
 
+        nameAndPriceContained.appendChild(figcaptionPrice)
+        
         const button = document.createElement('button');
         button.className = 'add-to-cart';
         button.textContent = 'Add to Cart';
 
         button.setAttribute('data-productid', product.id)
         figure.appendChild(img);
-        figure.appendChild(figcaptionName);
-        figure.appendChild(figcaptionPrice);
+        // figure.appendChild(figcaptionName);
+        // figure.appendChild(figcaptionPrice);
+        figure.appendChild(nameAndPriceContained);
         figure.appendChild(button);
         
         gridOfProducts.appendChild(figure);
