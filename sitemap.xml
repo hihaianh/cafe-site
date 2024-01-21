@@ -6,6 +6,29 @@
 		<lastmod>2023-07-28</lastmod>
 	</url>
 	<url>
+<<<<<<< Updated upstream
+=======
+		<loc>https://www.caphe/user.html</loc>
+		<priority>0.67</priority>
+		<lastmod>2024-01-19</lastmod>
+	</url>
+	<url>
+		<loc>https://www.caphe/login.html</loc>
+		<priority>0.67</priority>
+		<lastmod>2024-01-19</lastmod>
+	</url>
+	<url>
+		<loc>https://www.caphe/auth/register.php</loc>
+		<priority>0.50</priority>
+		<lastmod>2024-01-19</lastmod>
+	</url>
+	<url>
+		<loc>https://www.caphe/auth/config.php</loc>
+		<priority>0.50</priority>
+		<lastmod>2024-01-18</lastmod>
+	</url>
+	<url>
+>>>>>>> Stashed changes
 		<loc>https://www.caphe/visit.html</loc>
 		<priority>0.50</priority>
 		<lastmod>2023-07-18</lastmod>
