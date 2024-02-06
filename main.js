@@ -4,7 +4,7 @@ header.innerHTML = `<nav>
     </div>
     <ul>
       <div class="dropdown">
-        <li><a href="#">Visit &#x2304;</a>
+        <li><a href="#">Visit</a>
           <div class="dropdown-content">
               <a href="visit.html">Shoreditch</a>
               <a href="menu.html">Menu</a>

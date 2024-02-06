@@ -42,7 +42,7 @@ nav ul li a:hover {
     object-fit: cover;
     object-position: center;
     width: 100%;
-    height: 100%;
+    height: 700px;
 }
 .carousel .carousel-item .wrapper {
     height: 650px;
@@ -61,6 +61,11 @@ nav ul li a:hover {
     padding-top: 30px;
     border-bottom: 1px solid white;
     padding-bottom: 3px;
+}
+
+.btn-carousel:hover {
+    color: #362204;
+    transition: 0.3s ease-in;
 }
 
 .dropdown {
@@ -196,11 +201,6 @@ body {
     letter-spacing: 0.45px;
 }
 
-#hyperlink {
-    text-decoration: underline;
-    font-style: italic;
-}
-
 .visit-container {
     margin-top: 150px;
     margin-right: 80px;
@@ -233,13 +233,13 @@ body {
     color: #333333;
 }
 
-.visit-container p a {
+.visit-container p a, .ethos-container .ethos-right p a {
     font-style: italic;
     text-decoration: underline;
     color: #333333;
 }
 
-.visit-container p a:hover {
+.visit-container p a:hover, .ethos-container p a:hover {
     text-decoration: none;
     letter-spacing: 0.45px;
     color: #868484;
@@ -265,7 +265,7 @@ body {
     text-align: left;
     letter-spacing: 0.45px;
     margin-left: 100px;
-    margin-top: 180px;
+    margin-top: 130px;
 }
 
 .card-img-top {
@@ -302,15 +302,20 @@ body {
 
 /* visit shoreditch page */
 
+.shoreditch-container {
+    display: flex;
+    justify-content: center;
+}
+
 .shoreditch-container img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 100px;
+    width: 65%;
+    height: 520px;
+    margin-bottom: 50px;
 }
 
 .shoreditch-text {
     margin: 0 auto;
-    width: 70%;
+    width: 60%;
     text-align: center;
     font-family: 'Cardo';
     font-size: 20px;
@@ -379,15 +384,15 @@ body {
 
 .image-grid {
     display: flex;
-    width: 100%;
+    height: 475px;
     justify-content: space-between;
-    margin-top: 120px;
-    margin-bottom: 100px;
+    margin-top: 60px;
+    margin-bottom: 80px;
     padding-inline: 40px;
 }
 
 .image-grid img {
-    width: 30%;
+    width: 15%;
     height: auto;
 }
 
@@ -544,17 +549,13 @@ form button {
 .filter-header {
     display: flex;
     margin-right: 50px;
-    /* justify-content: flex-end; */
-    /* align-items: center;
-    width: 100%; */
-    margin-bottom: 10px; /* Adjust the width as desired */
+    align-content: stretch
+    /* margin-bottom: 10px; */
 }
 
 .filter-header-text {
     font-size: 18px;
     font-weight: lighter;
-    margin-left: 1195px;
-    margin-top: 5px;
 }
 
 .filter-select {
@@ -696,14 +697,15 @@ form button {
 
 .email-subscription input[type="email"] {
     padding: 10px;
-    width: 180px;
+    width: 220px;
     margin-right: 10px;
 }
 
 .email-subscription button {
-    padding: 8px 8px;
+    padding: 10px;
     background-color: #e9dac3;
     border: none;
+    margin-bottom: 28px;
 }
 
 footer p {

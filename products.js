@@ -1,21 +1,21 @@
 const products = [
     {
         id: 1,
-        name: 'ceramic cup',
+        name: 'Ceramic Cup',
         price: 16.90,
         image: './images/ceramic-cup.jpg'
     },
     {
         id: 2,
-        name: 'ceramic mug',
+        name: 'Ceramic Mug',
         price: 19.20,
         image: './images/ceramic-mug.jpg'
     },
     {
         id: 3,
-        name: 'drip coffee set',
+        name: 'Drip Coffee Set',
         price: 32.00, 
-        image: './images/drip-coffee-set.png'
+        image: './images/drip-coffee-set.jpg'
     },
     {
         id: 4,
@@ -25,15 +25,15 @@ const products = [
     },
     {
         id: 5,
-        name: 'tea ceremony set',
+        name: 'Tea Ceremony Set',
         price: 46.00,
         image: './images/tea-ceremony-set.jpg'
     },
     {
         id: 6,
-        name: 'robusta coffee beans',
+        name: 'Robusta Coffee Beans',
         price: 8.80,
-        image: './images/coffee-beans-sale.jpg'
+        image: './images/coffee-beans-front.jpg'
     }
 ]
 
@@ -45,7 +45,9 @@ function renderProducts(productsList, targetElementId) {
 
     productsList.forEach((product) => {
         const figure = document.createElement('figure');
-        figure.className= "product-listing";
+        figure.className = "product-listing";
+        figure.style.paddingLeft= '80px';
+        figure.style.paddingRight = '80px';
 
         const img = document.createElement('img');
         img.src = product.image;
