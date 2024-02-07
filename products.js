@@ -46,8 +46,8 @@ function renderProducts(productsList, targetElementId) {
     productsList.forEach((product) => {
         const figure = document.createElement('figure');
         figure.className = "product-listing";
-        figure.style.paddingLeft= '80px';
-        figure.style.paddingRight = '80px';
+        figure.style.marginLeft= '150px';
+        figure.style.marginRight= '80px';
 
         const img = document.createElement('img');
         img.src = product.image;

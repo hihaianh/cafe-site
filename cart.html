@@ -21,8 +21,9 @@
 
     <div class="shopping-container">
     <div class="allFormsOnLeft">    
-        <h2>Contact</h2>
+        
         <form id="contact">
+            <h2>Contact</h2>
             <input type="text" name="email" id="email" placeholder="Email" required>
             <input type="text" name="phonenumber" id="phonenumber" placeholder="Phone number" required>
         </form>
@@ -48,11 +49,26 @@
 
         <form id="billingAddress">
             <h2>Billing Address</h2>
-            <input type="checkbox" name="sameAsBilling" id="sameAsBilling" checked>
-            <label for="sameAsBilling">Same as shipping address</label>
+            <div class="deliveryOption">
+                <input type="radio" name="sameAsBilling" id="sameAsBilling" onclick="clearRadio()" checked>
+                <label for="sameAsBilling">Same as shipping address</label>
+            </div>
+            <div class="deliveryOption">
+                <input type="radio" name="differentAsBilling" id="differentAsBilling" onclick="clearRadio()">
+                <label for="differentAsBilling">Different billing address from shipping address</label>
+            </div>
         </form>
     </div>
     
+    <div class='hiddenBillingAddress'>
+        <form id="differentBillingAddress">
+            <h2>Billing Address - different from shipping address</h2>
+            <input type="text" name="firstLine" id="firstLine" placeholder="Flat/house number" required>
+            <input type="text" name="secondLine" id="secondLine" placeholder="Street name" required>
+            <input type="text" name="thirdLine" id="thirdLine" placeholder="Postcode" required>
+        </form>
+    </div>
+
 
     <div class="cartContainer">
     
@@ -61,6 +77,8 @@
         <div id="cartProducts"></div>
         <div id="totalPrice"></div>
     </div>
+
+    <div id="noProductsMessage">Empty cart: No products in your cart</div>
     </div>
 
     <footer id="footer" class="footer"></footer>

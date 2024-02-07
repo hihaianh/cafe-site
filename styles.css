@@ -64,7 +64,7 @@ nav ul li a:hover {
 }
 
 .btn-carousel:hover {
-    color: #362204;
+    color: #513928;
     transition: 0.3s ease-in;
 }
 
@@ -203,6 +203,7 @@ body {
 
 .visit-container {
     margin-top: 150px;
+    margin-left: 30px;
     margin-right: 80px;
     margin-bottom: 80px;
     overflow: auto;
@@ -211,7 +212,7 @@ body {
 .visit-us {
     margin-left: 100px;
     margin-bottom: 30px;
-    margin-top: 80px;
+    margin-top: 10px;
     letter-spacing: 0.45px;
 }
 
@@ -264,7 +265,7 @@ body {
     font-family: 'Cardo';
     text-align: left;
     letter-spacing: 0.45px;
-    margin-left: 100px;
+    margin-left: 130px;
     margin-top: 130px;
 }
 
@@ -537,30 +538,32 @@ form button {
 .thanks-form-container .back a:hover {
     color: grey;
 }
-/* shop page  */
+/* shop page / shop.html  */
 
 #products-text {
     margin-top: 40px;
-    margin-left: 45px;
-    font-size: 30px;
+    margin-left: 150px;
+    font-size: 50px;
 
 }
 
 .filter-header {
     display: flex;
-    margin-right: 50px;
-    align-content: stretch
-    /* margin-bottom: 10px; */
+    justify-content: flex-end;
+    width: 100%;
+    padding-right: 80px;
+    margin-bottom: 40px;
 }
 
 .filter-header-text {
     font-size: 18px;
     font-weight: lighter;
+    padding-top: 4px;
+    margin-right: 20px;
 }
 
 .filter-select {
-    margin-left: auto;
-    /* width: 20%; */
+    width: 190px;
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -578,43 +581,55 @@ form button {
 .grid-of-images {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 10px;
 }
 
 .grid-of-images figure {
-    margin: 50px;
+    margin-bottom: 50px;
     text-align: center;
 }
 
 .grid-of-images img {
     width: 100%;
-    height: 300px;
+    height: 400px;
     display: block;
 }
 
 .grid-of-images figcaption {
-    margin-top: 10px;
     font-size: 14px;
     text-align: center;
 }
 
 .grid-of-images .product-name {
-    margin-bottom: 5px;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 20px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.grid-of-images .product-price {
+    font-size: 15px;
+    margin-top: 10px;
+    text-align: left;
 }
 
 .add-to-cart {
-    padding: 15px 30px;
-    margin-top: 20px;
-    background-color: #e9dac3;
+    padding: 14px;
+    margin-top: 40px;
+    /* background-color: #e9dac3; */
+    background-color: #513928;
+    color: white;
     font-family: 'Cardo';
     font-weight: lighter;
-    font-size: 14px;
+    font-size: 16px;
     border: none;
+    width: 100%;
 }
 
 .add-to-cart:hover {
     background-color: white;
     color: #868484;
+    transition: 0.3s ease-in;
 }
 
 /* footer */
@@ -697,7 +712,7 @@ form button {
 
 .email-subscription input[type="email"] {
     padding: 10px;
-    width: 220px;
+    width: 258px;
     margin-right: 10px;
 }
 
@@ -706,6 +721,12 @@ form button {
     background-color: #e9dac3;
     border: none;
     margin-bottom: 28px;
+}
+
+.email-subscription button:hover {
+    background-color: white;
+    color: #868484;
+    transition: 0.2s ease-in;
 }
 
 footer p {
@@ -776,22 +797,22 @@ footer p {
     grid-gap: 10px;
 }
 
-.deliveryOption {
-    margin: 10px;
+.allFormsOnLeft {
+    margin-left: 120px;
 }
+
+.deliveryOption {
+    margin-left: -20px; 
+}
+
 input[type="radio"] {
     width: 10%;
     margin-top: 25px;
 }
 
-#sameAsBilling {
-    width: 10%;
-    margin-top: 20px;
-}
-
 #billingAddress {
     display: inline-block;
-    widtH: 100%;
+    width: 100%;
 }
 
 .cart-product {
@@ -830,6 +851,17 @@ input[type="radio"] {
     font-size: 22px;
     text-align: right;
     margin-right: 45px;
+}
+
+.hiddenBillingAddress {
+    display: none;
+}
+
+#noProductsMessage {
+    display: none;
+    width: 100%;
+    height: 700px;
+    font-size: 50px;
 }
 
 @media screen and (max-width: 600px) {
