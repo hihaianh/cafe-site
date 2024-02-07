@@ -163,3 +163,55 @@ function performSearch() {
 
 
 //newsletter form (in footer) functionality w/ vanilla JS
+
+
+
+
+//default billing option already selected, javascript needed to unselect option when user clicks
+// const billingAddressOpt = document.getElementById('sameAsBilling');
+// billingAddressOpt.addEventListener('click', function () {
+//  if (billingAddressOpt.checked) {
+//   billingAddressOpt.checked = false;
+//  } else {
+//   billingAddressOpt.checked = true;
+//  }
+// })
+
+const differentBillingAddressOpt = document.getElementById('differentAsBilling');
+function clearRadio() {
+  billingAddressOpt.checked = false;
+  differentAsBilling.checked = false;
+}
+
+//toggle billing address container - let user provide different billing address - not working but it's unchecking it by click, and then not letting me choose the opt again
+const hiddenBillingContainer = document.querySelector('.hiddenBillingAddress');
+const differentBillingAddressOptSelected = document.getElementById('differentAsBilling');
+const billingAddressFormContainer = document.getElementById('billingAddress');
+
+differentBillingAddressOptSelected.addEventListener('change', function () {
+  if (differentBillingAddressOptSelected.checked) {
+    // billingAddressFormContainer.style.display = 'none';
+    hiddenBillingContainer.style.display = 'block';
+  }
+})
+
+
+//if there's nothing yet in cart, all of cart page should be hidden and a phrase saying cart empty should be centred on page
+document.addEventListener('DOMContentLoaded', function() {
+  const cartProducts = document.getElementById('cartProducts');
+  const cartDetailsContainer = document.querySelector('.allFormsOnLeft');
+  const cartContainer = document.querySelector('.cartContainer');
+  const noProducts = document.getElementById('noProductsMessage');
+
+  if (!cartProducts.innerHTML.trim()) {
+    cartDetailsContainer.style.display = 'none';
+    cartContainer.style.display = 'none';
+    noProductsMessage.style.display = 'block';
+  } else {
+    noProductsMessage.style.display = 'none';
+    cartDetailsContainer.style.display = 'block';
+    cartContainer.style.display = 'block';
+  }
+})
+
+//when clicking on 'add to cart' btns on shop/home page, user should be alerted with a little pop-up or notif on nav bar
