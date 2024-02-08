@@ -1,5 +1,5 @@
 <?php
-if (empty($POST['name'])) {
+if (empty($_POST['name'])) {
     die('Name is required');
 }
 
@@ -19,29 +19,35 @@ if ($_POST['password'] !== $_POST['password2']) {
     die('Passwords must match');
 }
 
-$password_hash = password_hash($_POST['password'], PASSWORD_DEFAULT)
+$password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
 $mysqli = require __DIR__ . '/database.php';
-$sql = 'INSERT INTO user (name, email, password_hash)';
+$sql = 'INSERT INTO user (name, email, password_hash)
+        VALUES (?, ?, ?)';
 
 //statement methods
 $stmt = $mysqli->stmt_init();
+
 if (!$stmt->prepare($sql)) {
     die('SQL error: " . $mysqli->error');
 };
 
-$stmt->bind_param('sss', $_POST['name'], $_POST['email'], $password_hash)
+$stmt->bind_param('sss', $_POST["name"], $_POST["email"], $password_hash);
+
 if ($stmt->execute()) {
-    echo 'Registration successful'
+    //echo 'Registration successful';
+    //redirect to signup success page
+    header("Location: ../success.html");
+    exit;
 } else {
-    if ($mysqli->error === 1062) {
-        die('Email already taken')
+    if ($mysqli->errno === 1062) {
+        die("Email already taken");
     } else {
-        die($mysqli->error . '' . $mysqli.error)
+        die($mysqli->error . '' . $mysqli.errno);
     }
 };
 
-
+//debugging
 print_r($_POST);
 var_dump($password_hash);
 ?>

@@ -52,7 +52,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
         <button>Log In</button>
 
     </form>
-<!-- testing with user acc@ email: hiannnguyen@gmail.com password: Kpopper12 -->
+<!-- testing with user acc@ email: kei@gmail.com password: kei12345 -->
 </body>
 </html>
 
