@@ -1,0 +1,33 @@
+<?php
+
+if($_SERVER["REQUEST_METHOD"] === "POST") {
+    $mysqli = require __DIR__ . "/database.php";
+
+    $sql = sprintf("SELECT * FROM user 
+    WHERE email = '%s'", 
+    $mysqli->real_escape_string($_POST['email']));
+
+    $result = $mysqli->query($sql);
+    $user = $result->fetch_assoc();
+
+    var_dump($user);
+    exit;
+}
+
+?>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Registration</h1>
+    <p>Signup successful. You can now log in <a href="./auth/login.php">here</a></p>
+</body>
+</html>
