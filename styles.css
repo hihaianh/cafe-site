@@ -444,7 +444,7 @@ body {
     text-align: center;
 }
 
-/* contact page */
+/* contact page / contact.html */
 .contact-extract {
     padding: 20px;
     width: 50%;
@@ -872,4 +872,36 @@ input[type="radio"] {
     }
 }
 
+/* success.html */
 
+#register-title {
+    font-family: 'Cardo';
+    color: #513928;
+    letter-spacing: 1px;
+}
+
+#signup-success-line {
+    font-family: 'Roboto';
+}
+
+#success-body-container {
+    margin-left: 50px;
+    padding: 20px;
+}
+
+/* login.php (html) */
+
+#login-title {
+    font-family: 'Cardo';
+    color:#513928;
+    letter-spacing: 1px;
+}
+
+.login-form input {
+    display: block;
+    padding: 8px;
+}
+
+.login-form label {
+    margin-bottom: 8px;
+}

@@ -33,16 +33,25 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Cardo:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <h1>Log In</h1>
+    <h1 id='login-title'>Log In</h1>
 
         <?php if($is_invalid): ?>
             <em>Invalid login</em>
         <?php endif; ?>
 
-    <form method='POST'>
-
+    
+    <form method='POST' class='login-form'>
+        
         <label for="email">Email</label>
         <input type="email" name="email" id="email" value="<?= htmlspecialchars($_POST["email"] ?? "") ?>">
 
@@ -50,8 +59,8 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
         <input type="password" name="password" id="password">
 
         <button>Log In</button>
-
     </form>
+  
 <!-- testing with user acc@ email: kei@gmail.com password: kei12345 -->
 </body>
 </html>
