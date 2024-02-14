@@ -23,7 +23,7 @@ validation.addField("#name", [
                     return json.available === true;
                 })
         },
-        errorMessage: "Email already taken"
+        errorMessage: "Email is already taken"
     }
 ])
 .addField("#password", [

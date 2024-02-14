@@ -356,9 +356,8 @@ body {
 }
 
 .prices-row {
-    text-align: center;
-    margin-left: 335px;
     margin-top: 50px;
+    margin-left: 835px;
 }
 
 .drinks-menu {
@@ -485,7 +484,8 @@ form button {
 }
 
 .form-image-contained img {
-    width: 40%;
+    width: 500px;
+    margin-right: 50px;
 }
 
 .form-container {
