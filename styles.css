@@ -459,36 +459,36 @@ body {
     padding-left: 20px;
 }
 
-form {
+.contact-form {
     padding: 20px;
 }
 
-form input, form textarea {
+.contact-form input, .contact-form textarea {
     margin-bottom: 30px;
     padding: 15px;
     width: 60%;
     box-sizing: border-box;
     background-color: #FFFFF0;
     outline: none;
-    border: 1px solid #f1e7d4;
+    border: 1px solid #513928;
 }
 
-form button {
+.contact-form button {
     border: none;
     padding: 10px 20px;
-    background-color: #e9dac3;
+    background-color: #C3B091;
 }
 
-.form-image-contained {
+.contact-form-image-contained {
     display: flex;
 }
 
-.form-image-contained img {
+.contact-form-image-contained img {
     width: 500px;
     margin-right: 50px;
 }
 
-.form-container {
+.contact-form-container {
     flex: 1;
     padding: 20px;
 }
@@ -695,14 +695,15 @@ form button {
 }
 
 .email-subscription {
+    display: inline-block;
+    justify-content: center;
     text-align: right;
     margin-right: 40px;
 }
 
 .email-subscription p {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     font-family: 'Cardo';
-    text-align: left;
 }
 
 .email-subscription form {
@@ -717,10 +718,10 @@ form button {
 }
 
 .email-subscription button {
-    padding: 10px;
-    background-color: #e9dac3;
+    padding: 10px 15px;
+    background-color: #C3B091;
     border: none;
-    margin-bottom: 28px;
+    
 }
 
 .email-subscription button:hover {
@@ -904,4 +905,101 @@ input[type="radio"] {
 
 .login-form label {
     margin-bottom: 8px;
+}
+
+ /* user (register/login page) user.html */
+.register-body {
+    background-color: #CAB9A7;
+}
+
+#register-form-title {
+    font-family: 'Cardo';
+    color: #513928;
+    letter-spacing: 1px;
+    padding-bottom: 20px;
+}
+
+.register-form-container {
+    width: 100%;
+    height: 100%;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.signup {
+    padding: 50px;
+    width: 800px;
+    border: 2px solid #513928;
+    background-color: #FFFFF0;
+}
+
+.signup label {
+    display: block;
+    font-size: 18px;
+    margin-left: 20px;
+    margin-top: 8px;
+}
+
+.signup input[type=text], .signup input[type=email], .signup input[type=password] {
+    width: 500px;
+    margin: 20px;
+    padding: 12px;
+    border: 1px solid #513928;
+}
+
+#signup-btn-container {
+    display: flex;
+    justify-content: left;
+}
+.signup-btn {
+    width: 500px;
+    margin-left: 20px;
+    padding: 12px 25px;
+    font-size: 16px;
+    /* background-color:#513928; */
+    background: linear-gradient(to right, #1e130c, #9a8478);
+    background-size: 200%;
+    background-position: left;
+    transition: 500ms ease-in-out;
+    color: white;
+    cursor: pointer;
+}
+
+.signup-btn:hover {
+    background-position: right;
+}
+
+.register-form-container img {
+    width: 850px;
+    border-right: 2px solid #513928;
+    border-top: 2px solid #513928;
+    border-bottom: 2px solid #513928;
+    
+}
+
+.form-n-img-contained {
+    display: flex;
+    box-shadow: 10px 10px 5px 0px rgba(168,144,96,0.69);
+}
+
+.terms-of-services {
+    display: flex;
+    justify-content: left;
+}
+
+.signup input[type=checkbox] {
+    margin-right: 20px;
+    margin-bottom: 30px;
+}
+
+.already-a-member {
+    margin-left: 20px;
+    margin-top: 20px;
+    
+}
+
+.already-a-member a, .terms-of-services a {
+    text-decoration: underline;
+    color: grey;
 }

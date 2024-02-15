@@ -1,4 +1,4 @@
-const validation = new JustValidate("#signup");
+const validation = new JustValidate(".signup");
 
 validation.addField("#name", [
     {
@@ -14,7 +14,7 @@ validation.addField("#name", [
     },
     {
         validator: (value) => () => {
-            return fetch("validate-email.php?email=" + encodeURIComponent(value))
+            return fetch("./auth/validate-email.php?email=" + encodeURIComponent(value))
                 .then(function(response) {
                     return response.json();
 
@@ -43,5 +43,5 @@ validation.addField("#name", [
     }
 ])
 .onSuccess((event) => {
-    document.getElementById("signup").submit();
+    document.querySelector(".signup").submit();
 })
