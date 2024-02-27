@@ -2,7 +2,34 @@ header.innerHTML = `<nav>
     <div style="width: 100px">
       <a href="index.html"><img src="logo.png" style="width: 100%; height: auto" /></a>
     </div>
-    <ul>
+
+    
+    <div id='hamburgerContainer' class='peekaboo-two'>
+    <div class='hamburgerNav'>
+      <div style="width: 100px">
+      <a href="index.html"><img src="logo.png" style="width: 100%; height: auto" /></a>
+      </div>
+      <button class="hamburgerMenu">
+      <i class="fas fa-bars fa-lg" style="color: #000000;"></i>
+      </button>
+      <a href="cart.html">
+        <i class="fas fa-shopping-cart" style="color: #000000;"></i>
+      </a>
+    </div>
+      <ul class='hamburgerNavLinks'>
+        <li>
+          <a href="visit.html">Shoreditch</a>
+        </li>
+        <li>      
+          <a href="menu.html">Menu</a>
+        </li>  
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    </div>
+
+    <ul class='navLinks'>
       <div class="dropdown">
         <li><a href="#">Visit</a>
           <div class="dropdown-content">
@@ -25,7 +52,13 @@ header.innerHTML = `<nav>
         </a>
       </li>
     </ul>
+    </div> 
+    <button class="hamburgerMenu">
+      <i class="fas fa-bars fa-lg" style="color: #000000;"></i>
+    </button>
   </nav>
+ 
+
   <div id="searchContainer" class="peekaboo">
     <div class="navbar-container">
     <nav>
@@ -220,3 +253,19 @@ document.addEventListener('DOMContentLoaded', function() {
 })
 
 //when clicking on 'add to cart' btns on shop/home page, user should be alerted with a little pop-up or notif on nav bar
+
+
+//add Event Listener for hamburger menu - display nav links when clicking on menu
+
+const hamburgerAccess = document.querySelector('.hamburgerMenu');
+const hamburgerAccessIcon = document.querySelector('.fa-bars');
+const hamburgerContainer = document.getElementById('hamburgerContainer');
+// const navLinks = document.querySelector('.navLinks')
+//search icon once clicked will open up hidden container
+
+hamburgerAccessIcon.addEventListener('click', function() {
+  hamburgerContainer.classList.toggle('peekaboo-two')
+})
+// function toggleHamburgerMenu() {
+//   hamburgerContainer.classList.toggle('peekaboo-two');
+// }

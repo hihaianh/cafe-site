@@ -139,7 +139,7 @@ body {
     font-size: 50px;
 }
 
-#caphe-sentence {
+.caphe-sentence {
     font-family: 'Cardo';
     letter-spacing: 0.45px;
     font-weight: lighter;
@@ -150,6 +150,7 @@ body {
 }
 
 .ethos-container {
+    display: flex;
     margin-top: 200px;
     margin-left: 80px;
     margin-bottom: 80px;
@@ -1003,3 +1004,92 @@ input[type="radio"] {
     text-decoration: underline;
     color: grey;
 }
+
+
+/* homepage / index.html hamburger  */
+.hamburgerNav, #hamburgerContainer {
+    display: none;
+}
+
+.peekaboo-two {
+    background-color: #FFFFF0;
+    color: black;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+}
+
+/* responsiveness */
+/* homepage / index.html */
+@media (max-width: 768px) {
+    .bold-text {
+        font-size: 40px;
+    }
+    .caphe-sentence {
+        font-size: 26px;
+    }
+    .ethos-container {  
+        flex-direction: column;
+        text-align: left;
+        margin: 80px 0px;
+    }
+    .ethos-container img {
+        width: 375px;
+        height: 300px;
+    }
+    .ethos-right {
+        margin-top: 20px;
+    }
+    .last-line {
+        margin-top: 20px;
+    }
+    .hamburgerMenu {
+        display: block;
+        position: relative;
+        cursor: pointer;
+        width: 40px;
+        height: 50px;
+        border: none;
+        background-color: #FFFFF0;
+    }
+    .hamburgerNav {
+        display: flex;
+    }
+    .navLinks {
+        display: none;
+        flex-direction: column;
+    }
+    .browse-container {
+        margin-left: 0;
+    }
+
+    .cards-row {
+        flex-direction: column;
+    }
+    .cards-row img{
+        width: 300px;
+        height: 300px;
+        margin: 0;
+        padding: 0;
+        text-align: left;
+    }
+
+}
+
+@media (min-width: 769px) {
+    .hamburgerMenu {
+        display: none;
+    }
+}
+
+/* @media (min-width: 576px) {
+
+} */
+
+
+
